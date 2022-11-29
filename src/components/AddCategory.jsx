@@ -1,5 +1,5 @@
 import { useState } from "react"
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const AddCategory = ({onAddCategory}) => {
 
@@ -21,7 +21,7 @@ export const AddCategory = ({onAddCategory}) => {
 
   return (
     // Poner solo OnSubmit es igual a // (event) => onSubmit(event) porque nada mas es un parametro
-    <form onSubmit={ onSubmit }>
+    <form onSubmit={ onSubmit } aria-label>
       <input
         type="text"
         placeholder="Buscar gifs"
@@ -32,6 +32,6 @@ export const AddCategory = ({onAddCategory}) => {
   )
 }
 
-// AddCategory.propTypes = {
-//   setcategories: PropTypes.func
-// }
+AddCategory.propTypes = {
+  onAddCategory: PropTypes.func.isRequired,
+}
